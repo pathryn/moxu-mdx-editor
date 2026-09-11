@@ -1,0 +1,24 @@
+name: Release source
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Build source archive
+        run: |
+          git archive --format=tar.gz --prefix=moxu-mdx-editor/ "$GITHUB_REF_NAME" > "moxu-mdx-editor-$GITHUB_REF_NAME.tar.gz"
+          sha256sum "moxu-mdx-editor-$GITHUB_REF_NAME.tar.gz" > SHA256SUMS
+      - name: Attach release artifacts
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release upload "$GITHUB_REF_NAME" "moxu-mdx-editor-$GITHUB_REF_NAME.tar.gz" SHA256SUMS --clobber

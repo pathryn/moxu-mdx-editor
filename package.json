@@ -1,0 +1,88 @@
+{
+  "name": "moxu-mdx-editor",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "description": "A structured, visual MDX editor built with Tiptap, MUI and Next.js.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pathryn/moxu-mdx-editor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pathryn/moxu-mdx-editor/issues"
+  },
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "test:e2e": "playwright test",
+    "check": "pnpm lint && pnpm typecheck && pnpm test && pnpm build"
+  },
+  "dependencies": {
+    "@emotion/cache": "^11.14.0",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/material": "^7.3.2",
+    "@mui/material-nextjs": "^9.4.0",
+    "@tiptap/core": "^3.31.3",
+    "@tiptap/extension-drag-handle-react": "3.31.3",
+    "@tiptap/extension-highlight": "3.31.3",
+    "@tiptap/extension-subscript": "3.31.3",
+    "@tiptap/extension-superscript": "3.31.3",
+    "@tiptap/extension-table": "^3.31.3",
+    "@tiptap/extension-task-item": "^3.31.3",
+    "@tiptap/extension-task-list": "^3.31.3",
+    "@tiptap/extension-text-align": "^3.31.3",
+    "@tiptap/extension-text-style": "3.31.3",
+    "@tiptap/extensions": "^3.31.3",
+    "@tiptap/pm": "^3.31.3",
+    "@tiptap/react": "^3.31.3",
+    "@tiptap/starter-kit": "^3.31.3",
+    "lucide-react": "^0.544.0",
+    "acorn": "^8.15.0",
+    "next": "16.3.4",
+    "next-mdx-remote-client": "^2.1.12",
+    "react": "^19.1.1",
+    "react-colorful": "^5.8.1",
+    "react-dom": "^19.1.1",
+    "rehype-autolink-headings": "^7.1.0",
+    "rehype-pretty-code": "^0.14.5",
+    "rehype-slug": "^6.0.0",
+    "remark-mdx": "^3.1.1",
+    "remark-parse": "^11.0.0",
+    "shiki": "^4.4.3",
+    "unified": "^11.0.5",
+    "unist-util-visit": "^5.0.0"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.10.2",
+    "@eslint/js": "^9.36.0",
+    "@types/node": "^24.5.2",
+    "@types/react": "^19.1.15",
+    "@types/react-dom": "^19.1.9",
+    "@playwright/test": "^1.55.0",
+    "eslint": "^9.36.0",
+    "eslint-config-next": "16.3.4",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.21",
+    "globals": "^16.4.0",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.44.1",
+    "vitest": "^5.0.0",
+    "@vitest/coverage-v8": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=20.9.0"
+  },
+  "packageManager": "pnpm@11.1.2",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "sharp",
+      "unrs-resolver"
+    ]
+  }
+}
